@@ -2,8 +2,11 @@
 import os
 from datetime import timedelta
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+from config.development import REDIS_PASSWORD
 
+REDIS_PASSWORD.os.environ.get("REDIS_PASSWORD")
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'your-secret-key'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
